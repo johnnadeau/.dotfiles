@@ -1,0 +1,8 @@
+[core]
+  editor = /usr/local/bin/vim
+  excludesfile = ~/.gitignore
+[user]
+  name = John Nadeau
+  email = johnnnadeau@gmail.com
+[push]
+  default = simple
