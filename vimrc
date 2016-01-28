@@ -76,12 +76,11 @@ command! Wq wq
 
 " vim-rspec/vim-tmux-runner configuration
 let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+" use Vtr mappings seen here:
+" https://github.com/christoomey/vim-tmux-runner/blob/master/plugin/vim-tmux-runner.vim#L458
+let g:VtrUseVtrMaps = 1
 
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
-
-" make tmux runner pane active and zoom it
-" use tmux prefix+; or ctrl+\ to go back
-map <Leader>f :VtrFocusRunner<CR>
