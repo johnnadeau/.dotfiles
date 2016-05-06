@@ -17,13 +17,14 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'christoomey/vim-tmux-runner'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
 filetype plugin indent on   " required
 
 syntax on                   " enable syntax highlighting
-
 set number
 set numberwidth=5
 set backspace=indent,eol,start " allow backspacing over everything insert mode
@@ -37,6 +38,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set shiftround
+set textwidth=80
 set colorcolumn=80
 
 " display extra whitespace
@@ -65,7 +67,6 @@ let mapleader = ","
 " edit and source .vimrc
 nmap <Leader>vi :tabe ~/.vimrc<cr>
 nmap <Leader>bi :source ~/.vimrc<cr>:PluginInstall<cr>q
-map <Leader>co mmggVG"*y`m
 
 " handle common typos
 command! Q q
@@ -85,3 +86,5 @@ map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
+
+au FileType markdown setlocal textwidth=100 colorcolumn=100
