@@ -6,3 +6,5 @@
   email = johnnnadeau@gmail.com
 [push]
   default = simple
+[alias]
+next-commit = !git checkout $(git log --reverse --ancestry-path --pretty=%H HEAD..master | head -1)
