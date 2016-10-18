@@ -19,6 +19,7 @@ Plugin 'christoomey/vim-tmux-runner'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'w0rp/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
