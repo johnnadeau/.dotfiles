@@ -1,4 +1,4 @@
-" =============================================================================
+
 " Vundle stuff
 " =============================================================================
 set nocompatible            " be iMproved, required
@@ -77,7 +77,7 @@ command! W w
 command! Wq wq
 
 " vim-rspec/vim-tmux-runner configuration
-let g:rspec_command = "VtrSendCommandToRunner! rspec {spec}"
+let g:rspec_command = "VtrSendCommandToRunner! bundle exec rspec {spec}"
 " use Vtr mappings seen here:
 " https://github.com/christoomey/vim-tmux-runner/blob/master/plugin/vim-tmux-runner.vim#L458
 let g:VtrUseVtrMaps = 1
