@@ -82,4 +82,16 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias "cconsole"="catalyze console code-1 'bundle exec rails console'"
+alias "cconsole"="catalyze -E QueueDr-Production console code-1 "bundle exec rails console""
+
+function tn() {
+
+  if [ -z "$1" ]; then;
+    session_name=$(basename `pwd`)
+  else
+    session_name=$1
+  fi
+
+  tmux new-session -s $session_name -n 'main'
+}
+
