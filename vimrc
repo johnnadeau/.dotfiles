@@ -42,6 +42,7 @@ set softtabstop=2
 set shiftround
 set textwidth=80
 set colorcolumn=80
+set clipboard=unnamed "use system clipboard
 
 " display extra whitespace
 set list listchars=tab:»·,trail:·
