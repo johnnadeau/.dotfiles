@@ -17,11 +17,11 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'christoomey/vim-tmux-runner'
-Plugin 'thoughtbot/vim-rspec'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'w0rp/ale'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'janko-m/vim-test'
 
 " All of your Plugins must be added before the following line
 call vundle#end()           " required
@@ -41,8 +41,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set shiftround
-set textwidth=80
-set colorcolumn=80
+set textwidth=100
+"set colorcolumn=100
 set clipboard=unnamed "use system clipboard
 
 " display extra whitespace
@@ -80,19 +80,16 @@ command! E e
 command! W w
 command! Wq wq
 
-" vim-rspec/vim-tmux-runner configuration
-let g:rspec_command = "VtrSendCommandToRunner! bundle exec rspec {spec}"
-" use Vtr mappings seen here:
 " https://github.com/christoomey/vim-tmux-runner/blob/master/plugin/vim-tmux-runner.vim#L458
 let g:VtrUseVtrMaps = 1
 
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+let test#strategy = "vtr"
+nmap <Leader>t :TestFile<CR>
+nmap <Leader>s :TestNearest<CR>
+nmap <Leader>l :TestLast<CR>
+nmap <Leader>a :TestSuite<CR>
+nmap <Leader>g :TestVisit<CR>
 
 " git shortcuts
 noremap <leader>gb :Gblame<CR>
 noremap <leader>gd :Gdiff<CR>
-
-au FileType markdown setlocal textwidth=100 colorcolumn=100
