@@ -82,8 +82,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias "cconsole"="catalyze -E QueueDr-Production console code-1 'bundle exec rails console'"
+alias "cconsole"="dconsole"
 
+alias "dconsole"="datica -E QueueDr-Production console code-1 'bundle exec rails console'"
 function tn() {
 
   if [ -z "$1" ]; then;
