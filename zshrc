@@ -10,6 +10,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH("$HOME/code/system/bin:$PATH"
+QUEUEDR_USER=john
+
 function tn() {
 
   if [ -z "$1" ]; then;
