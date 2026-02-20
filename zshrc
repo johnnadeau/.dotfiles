@@ -10,8 +10,19 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH("$HOME/code/system/bin:$PATH"
-QUEUEDR_USER=john
+case "$(uname -s)" in
+  Darwin)
+    export PATH="$HOME/code/system/bin:/opt/homebrew/bin:/opt/homebrew/sbin:$PATH"
+    ;;
+  Linux)
+    export PATH="$HOME/code/system/bin:$PATH"
+    ;;
+  *)
+    export PATH="$HOME/code/system/bin:$PATH"
+    ;;
+esac
+
+export QUEUEDR_USER=john
 
 function tn() {
 
@@ -23,4 +34,3 @@ function tn() {
 
   tmux new-session -s $session_name -n 'main'
 }
-

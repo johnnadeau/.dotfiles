@@ -7,5 +7,5 @@
 [push]
   default = simple
 [alias]
-  next-commit = !git checkout $(git log --reverse --ancestry-path --pretty=%H HEAD..master | head -1)
+  next-commit = "!sh -c 'base=$(git symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null | sed \"s|^origin/||\"); if [ -z \"$base\" ]; then if git show-ref --verify --quiet refs/heads/main; then base=main; elif git show-ref --verify --quiet refs/heads/master; then base=master; else base=master; fi; fi; next=$(git log --reverse --ancestry-path --pretty=%H HEAD..\"$base\" | head -1); [ -n \"$next\" ] && git checkout \"$next\" || echo \"No next commit found on $base\"'"
   nuke-branch = !sh -c 'git branch -D $1 && git push origin :$1' -
